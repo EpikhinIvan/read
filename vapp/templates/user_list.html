@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Список пользователей</title>
+    <style>
+        ul{
+            list-style-type: numeric;
+        }
+        li{
+            font-family: Arial, Helvetica, sans-serif; 
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Список пользователей</h1>
+    <ul>
+        {% for user in users %}
+            <li>ID: {{ user.chat_id }} - Имя: {{ user.first_name }} - Username: @{{ user.username }}</li>
+        {% empty %}
+            <li>Пользователи не найдены.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}Rassylka{% endblock %}
+
+{% block content %}
+{% load static %}
+ 
+<main class="settings-container">
+    <div class="wrapper-main">
+        <div class="helper-bot">
+            <h1>Рассылка сообщений</h1>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="submit1">Отправить</button>
+            </form>
+        </div>
+    </div>
+</main>
+
+{% endblock %}
